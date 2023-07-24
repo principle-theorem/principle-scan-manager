@@ -4,49 +4,44 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-2022, ubuntu-22.04, macos-12]
-        include:
-          - os: windows-2022
-            buildConfig: Release
-            platform: Windows
-            packageType: exe
-          - os: windows-2022
-            buildConfig: Release-Msi
-            platform: Windows
-            packageType: msi
-          - os: ubuntu-22.04
-            buildConfig: Release-Linux
-            platform: Linux
-            packageType: flatpak
-          - os: macos-12
-            buildConfig: Release
-            platform: Mac
-            packageType: dmg
+        os: [windows-2022, macos-12]
 
-    runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       
     - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v3         
       with:
         dotnet-version: 6.0.x
 
     - name: Install macos workload
-      if: matrix.platform == 'Mac'
       run: dotnet workload install macos
 
     - name: Restore dependencies
       run: dotnet restore
+      
+    - name: Clean
+      run: dotnet run --project NAPS2.Tools -- clean
+      
+    - name: Build
+      run: dotnet run --project NAPS2.Tools -- build release
 
     # Add platform-specific prerequisites installation here, like Inno Setup, WiX, Xcode, flatpak-builder, etc.
 
-    - name: Build & Package
-      run: |
-        dotnet run --project NAPS2.Tools -- build ${{ matrix.buildConfig }} -v
-        dotnet run --project NAPS2.Tools -- pkg ${{ matrix.packageType }}
-    
-    # Additional steps like uploading the built installer to GitHub releases or any storage can be added here.
+    - name: Package for MacOS
+      if: matrix.os == 'macos-12'
+      run: dotnet run --project NAPS2.Tools -- pkg pkg
+      
+    - name: Package for Windows
+      if: matrix.os == 'windows-2022'
+      run: dotnet run --project NAPS2.Tools -- pkg exe
+      
+    - name: Upload Artifacts
+      uses: actions/upload-artifacts@v3
+      with:
+        name: principle-scan-manager-${{ matrix.os }}-artifacts
+        path: NAPS2.Setup/publish/
