@@ -41,7 +41,7 @@
       <HintPath>..\NAPS2.Setup\lib\NTwain.dll</HintPath>
     </Reference>
     
-    <PackageReference Include="Grpc.Tools" Version="2.56.2" PrivateAssets="all" />
+    <PackageReference Include="Grpc.Tools" Version="2.47.0" PrivateAssets="all" />
     <PackageReference Include="GrpcDotNetNamedPipes" Version="2.0.0" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" Condition="'$(TargetFramework)' != 'net6-macos10.15'" />
     <PackageReference Include="NAPS2.Wia" Version="2.0.2" Condition="'$(TargetFramework)' != 'net6-macos10.15'" />

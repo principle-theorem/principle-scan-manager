@@ -9,7 +9,7 @@ using UnhandledExceptionEventArgs = Eto.UnhandledExceptionEventArgs;
 namespace NAPS2.EntryPoints;
 
 /// <summary>
-/// The entry point logic for NAPS2.exe, the NAPS2 GUI.
+/// The entry point logic for PrincipleScanManager.exe, the NAPS2 GUI.
 /// </summary>
 public static class GtkEntryPoint
 {

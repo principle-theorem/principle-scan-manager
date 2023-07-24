@@ -24,7 +24,7 @@ public static class MsiInstaller
 
         if (run)
         {
-            Process.Start(Path.Combine(ProjectHelper.GetInstallationFolder(platform), "NAPS2.exe"));
+            Process.Start(Path.Combine(ProjectHelper.GetInstallationFolder(platform), "PrincipleScanManager.exe"));
         }
 
         Output.Info("Installed.");

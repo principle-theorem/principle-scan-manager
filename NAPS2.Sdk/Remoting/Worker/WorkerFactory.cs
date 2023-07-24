@@ -41,7 +41,7 @@ public class WorkerFactory : IWorkerFactory
             return new WorkerFactory(Environment.ProcessPath!, null, env);
         }
 #endif
-        var exePath = Path.Combine(AssemblyHelper.EntryFolder, "NAPS2.exe");
+        var exePath = Path.Combine(AssemblyHelper.EntryFolder, "PrincipleScanManager.exe");
         var workerExePath = Path.Combine(AssemblyHelper.EntryFolder, "NAPS2.Worker.exe");
         if (!File.Exists(workerExePath))
         {

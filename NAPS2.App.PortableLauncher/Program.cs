@@ -22,7 +22,7 @@ class Program
             }
             finally
             {
-                var portableExePath = Path.Combine(portableExeDir, "App", "NAPS2.exe");
+                var portableExePath = Path.Combine(portableExeDir, "App", "PrincipleScanManager.exe");
                 if (failedUpdate)
                 {
                     Process.Start(portableExePath, "/FailedUpdate");

@@ -50,16 +50,16 @@
           <RegistryValue Type="string" Name="Action" Value="Scan with NAPS2" />
           <RegistryValue Type="string" Name="CLSID" Value="WIACLSID" />
           <RegistryValue Type="string" Name="DefaultIcon" Value="sti.dll,0" />
-          <RegistryValue Type="string" Name="InitCmdLine" Value="/WiaCmd;[INSTALLFOLDER]NAPS2.exe /StiDevice:%1 /StiEvent:%2;" />
+          <RegistryValue Type="string" Name="InitCmdLine" Value="/WiaCmd;[INSTALLFOLDER]PrincipleScanManager.exe /StiDevice:%1 /StiEvent:%2;" />
           <RegistryValue Type="string" Name="Provider" Value="NAPS2" />
         </RegistryKey>
         <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\StillImage\Registered Applications">
-          <RegistryValue Type="string" Name="NAPS2" Value="[INSTALLFOLDER]NAPS2.exe" />
+          <RegistryValue Type="string" Name="NAPS2" Value="[INSTALLFOLDER]PrincipleScanManager.exe" />
         </RegistryKey>
         <RegistryKey Root="HKLM" Key="SYSTEM\CurrentControlSet\Control\StillImage\Events\STIProxyEvent\{1c3a7177-f3a7-439e-be47-e304a185f932}">
-          <RegistryValue Type="string" Name="Cmdline" Value="[INSTALLFOLDER]NAPS2.exe /StiDevice:%1 /StiEvent:%2" />
+          <RegistryValue Type="string" Name="Cmdline" Value="[INSTALLFOLDER]PrincipleScanManager.exe /StiDevice:%1 /StiEvent:%2" />
           <RegistryValue Type="string" Name="Desc" Value="Scan with NAPS2" />
-          <RegistryValue Type="string" Name="Icon" Value="[INSTALLFOLDER]NAPS2.exe,0" />
+          <RegistryValue Type="string" Name="Icon" Value="[INSTALLFOLDER]PrincipleScanManager.exe,0" />
           <RegistryValue Type="string" Name="Name" Value="NAPS2" />
         </RegistryKey>
       </Component>
@@ -94,7 +94,7 @@
         <Shortcut Id="ApplicationStartMenuShortcut"
                   Name="NAPS2"
                   Description="Principle Scan Manager"
-                  Target="[INSTALLFOLDER]NAPS2.exe"
+                  Target="[INSTALLFOLDER]PrincipleScanManager.exe"
                   WorkingDirectory="INSTALLFOLDER" />
         <RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
         <RegistryValue Root="HKCU" Key="Software\Microsoft\NAPS2" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
