@@ -1,35 +1,52 @@
-name: .NET
+name: Build NAPS2 Installers
 
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [windows-2022, ubuntu-22.04, macos-12]
+        include:
+          - os: windows-2022
+            buildConfig: Release
+            platform: Windows
+            packageType: exe
+          - os: windows-2022
+            buildConfig: Release-Msi
+            platform: Windows
+            packageType: msi
+          - os: ubuntu-22.04
+            buildConfig: Release-Linux
+            platform: Linux
+            packageType: flatpak
+          - os: macos-12
+            buildConfig: Release
+            platform: Mac
+            packageType: dmg
+
+    runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET 6
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Setup .NET SDK
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Install workloads (MacOS)
-      if: matrix.os == 'macos-12'
+
+    - name: Install macos workload
+      if: matrix.platform == 'Mac'
       run: dotnet workload install macos
+
     - name: Restore dependencies
       run: dotnet restore
-    - name: Publish
-      run: dotnet run --project NAPS2.Tools -- publish -c Release -o ./build/
-    # For Mac, we might need to publish a second time due to native dependencies (as per your comment)
-    - name: Publish 2 (MacOS)
-      if: matrix.os == 'macos-12'
-      run: dotnet run --project NAPS2.Tools -- publish -c Release -o ./build/
-    - name: Test
-      run: dotnet run --project NAPS2.Tools -- test -v --nogui
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: publish-artifacts-${{ matrix.os }}
-        path: |
-          ./build/*
+
+    # Add platform-specific prerequisites installation here, like Inno Setup, WiX, Xcode, flatpak-builder, etc.
+
+    - name: Build & Package
+      run: |
+        dotnet run --project NAPS2.Tools -- build ${{ matrix.buildConfig }} -v
+        dotnet run --project NAPS2.Tools -- pkg ${{ matrix.packageType }}
+    
+    # Additional steps like uploading the built installer to GitHub releases or any storage can be added here.
