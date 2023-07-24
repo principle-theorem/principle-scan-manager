@@ -858,7 +858,7 @@ msgid "None"
 msgstr "Nimic"
 
 #: UiStrings.resx$Naps2FullName$Message
-msgid "Not Another PDF Scanner"
+msgid "Principle Scan Manager"
 msgstr "Nici alt scaner PDF"
 
 #: UiStrings.resx$NotNow$Message

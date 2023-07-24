@@ -13,8 +13,8 @@
 
         <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
 
-        <Title>NAPS2 - Not Another PDF Scanner</Title>
-        <Product>NAPS2 - Not Another PDF Scanner</Product>
+        <Title>Principle Scan Manager</Title>
+        <Product>Principle Scan Manager</Product>
     </PropertyGroup>
 
     <Import Project="..\NAPS2.Setup\targets\CommonTargets.targets" />

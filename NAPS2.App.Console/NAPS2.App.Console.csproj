@@ -9,8 +9,8 @@
     <RootNamespace>NAPS2.Console</RootNamespace>
     <AssemblyName>NAPS2.Console</AssemblyName>
     
-    <Title>NAPS2 - Not Another PDF Scanner</Title>
-    <Product>NAPS2 - Not Another PDF Scanner</Product>
+    <Title>Principle Scan Manager</Title>
+    <Product>Principle Scan Manager</Product>
 
     <!--
     We reference the 32-bit worker directly so the EXE is included in the output.

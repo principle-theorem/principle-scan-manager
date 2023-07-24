@@ -5,7 +5,7 @@
 #include "..\config\windows\CodeDependencies.iss"
 
 [Setup]
-AppName=NAPS2 - Not Another PDF Scanner
+AppName=Principle Scan Manager
 AppVersion={#AppVersion}
 AppVerName=NAPS2 {#AppVersionName}
 AppPublisher=NAPS2 Software

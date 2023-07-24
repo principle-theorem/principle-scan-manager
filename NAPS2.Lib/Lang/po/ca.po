@@ -858,8 +858,8 @@ msgid "None"
 msgstr "Cap"
 
 #: UiStrings.resx$Naps2FullName$Message
-msgid "Not Another PDF Scanner"
-msgstr "(Not Another PDF Scanner)"
+msgid "Principle Scan Manager"
+msgstr "(Principle Scan Manager)"
 
 #: UiStrings.resx$NotNow$Message
 msgid "Not Now"

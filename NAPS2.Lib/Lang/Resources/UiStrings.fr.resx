@@ -325,7 +325,7 @@
     <value>NAPS2 - {0}</value>
   </data>
   <data name="Naps2FullName" xml:space="preserve">
-    <value>Not Another PDF Scanner</value>
+    <value>Principle Scan Manager</value>
   </data>
   <data name="OcrSetupFormTitle" xml:space="preserve">
     <value>Configuration OCR (reconnaissance optique de caractères)</value>

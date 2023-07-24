@@ -858,7 +858,7 @@ msgid "None"
 msgstr "Καμία"
 
 #: UiStrings.resx$Naps2FullName$Message
-msgid "Not Another PDF Scanner"
+msgid "Principle Scan Manager"
 msgstr "Όχι άλλος σαρωτής PDF"
 
 #: UiStrings.resx$NotNow$Message

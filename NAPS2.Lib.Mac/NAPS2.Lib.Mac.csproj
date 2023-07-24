@@ -6,8 +6,8 @@
         <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
         <RootNamespace>NAPS2</RootNamespace>
 
-        <Title>NAPS2 - Not Another PDF Scanner</Title>
-        <Product>NAPS2 - Not Another PDF Scanner</Product>
+        <Title>Principle Scan Manager</Title>
+        <Product>Principle Scan Manager</Product>
     </PropertyGroup>
 
     <Import Project="..\NAPS2.Setup\targets\CommonTargets.targets" />
@@ -16,6 +16,7 @@
     <ItemGroup>
         <ProjectReference Include="..\NAPS2.Images.Mac\NAPS2.Images.Mac.csproj" />
         <ProjectReference Include="..\NAPS2.Lib\NAPS2.Lib.csproj" />
+        <PackageReference Include="Eto.Platform.Mac64" Version="2.7.2" />
         <PackageReference Include="Eto.Platform.macOS" Version="2.7.2" />
     </ItemGroup>
 

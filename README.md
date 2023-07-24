@@ -1,4 +1,4 @@
-# NAPS2 - Not Another PDF Scanner
+# Principle Scan Manager
 
 <p align="center">
 <img src="https://www.naps2.com/images/naps2-desktop-win.png?1" width="400" alt="NAPS2 on Windows" /> <img src="https://www.naps2.com/images/naps2-desktop-mac.png?1" width="400" alt="NAPS2 on Mac" /> <img src="https://www.naps2.com/images/naps2-desktop-linux.png?1" width="400" alt="NAPS2 on Linux" />

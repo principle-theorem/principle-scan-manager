@@ -2,7 +2,7 @@
 Type=Application
 Version=1.0
 Name=NAPS2
-Comment=Not Another PDF Scanner
+Comment=Principle Scan Manager
 Exec=naps2
 Icon=com.naps2.Naps2
 Categories=Graphics;Office
