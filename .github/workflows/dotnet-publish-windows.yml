@@ -22,7 +22,7 @@ jobs:
       run: dotnet restore
     
     - name: Publish Windows
-      run: dotnet run --project NAPS2.Tools -- publish -p win exe
+      run: dotnet run --project NAPS2.Tools -- publish exe -v
       
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
