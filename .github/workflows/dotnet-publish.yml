@@ -42,10 +42,6 @@ jobs:
       if: matrix.os == 'windows-2022'
       run: ls -la "NAPS2.Setup\obj"
       shell: pwsh
-      
-    - name: List dir contents (macOS)
-      if: matrix.os == 'macos-13'
-      run: ls -la "NAPS2.Setup/obj"
 
     - name: Package for MacOS
       if: matrix.os == 'macos-13'
