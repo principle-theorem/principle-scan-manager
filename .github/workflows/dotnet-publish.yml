@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-2022, macos-12]
+        os: [windows-2022, macos-13]
 
     steps:
     - name: Checkout repository
@@ -33,7 +33,7 @@ jobs:
     # Add platform-specific prerequisites installation here, like Inno Setup, WiX, Xcode, flatpak-builder, etc.
 
     - name: Package for MacOS
-      if: matrix.os == 'macos-12'
+      if: matrix.os == 'macos-13'
       run: dotnet run --project NAPS2.Tools -- pkg pkg
       
     - name: Package for Windows
