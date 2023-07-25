@@ -1,0 +1,31 @@
+name: Build Windows Installers
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-2022
+  
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v3         
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Install macos workload
+      run: dotnet workload install macos
+
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Publish Windows
+      run: dotnet run --project NAPS2.Tools -- publish -p win exe
+      
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: principle-scan-manager-windows-artifacts
+        path: NAPS2.Setup/publish/
