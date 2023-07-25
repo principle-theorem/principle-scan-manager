@@ -40,7 +40,7 @@ jobs:
     
     - name: List dir contents (Windows)
       if: matrix.os == 'windows-2022'
-      run: ls -la "NAPS2.Setup\obj"
+      run: Get-ChildItem -Path "NAPS2.Setup\obj"
       shell: pwsh
 
     - name: Package for MacOS
