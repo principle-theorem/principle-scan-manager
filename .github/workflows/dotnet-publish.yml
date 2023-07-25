@@ -30,23 +30,13 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
       
-    - name: Build
-      run: dotnet run --project NAPS2.Tools -- build release -v
-
-    # Add platform-specific prerequisites installation here, like Inno Setup, WiX, Xcode, flatpak-builder, etc.
-    
-    - name: List dir contents (Windows)
-      if: matrix.os == 'windows-2022'
-      run: Get-ChildItem -Path "NAPS2.Setup"
-      shell: pwsh
-
-    - name: Package for MacOS
+    - name: Publish MacOS
       if: matrix.os == 'macos-13'
-      run: dotnet run --project NAPS2.Tools -- pkg pkg
-      
-    - name: Package for Windows
+      run: dotnet run --project NAPS2.Tools -- publish -p mac pkg
+    
+    - name: Publish Windows
       if: matrix.os == 'windows-2022'
-      run: dotnet run --project NAPS2.Tools -- pkg exe
+      run: dotnet run --project NAPS2.Tools -- publish -p win exe
       
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
