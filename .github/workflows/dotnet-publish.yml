@@ -38,9 +38,14 @@ jobs:
 
     # Add platform-specific prerequisites installation here, like Inno Setup, WiX, Xcode, flatpak-builder, etc.
     
-    - name: List dir contents
+    - name: List dir contents (Windows)
+      if: matrix.os == 'windows-2022'
       run: ls -la "NAPS2.Setup\obj"
       shell: pwsh
+      
+    - name: List dir contents (macOS)
+      if: matrix.os == 'macos-13'
+      run: ls -la "NAPS2.Setup/obj"
 
     - name: Package for MacOS
       if: matrix.os == 'macos-13'
