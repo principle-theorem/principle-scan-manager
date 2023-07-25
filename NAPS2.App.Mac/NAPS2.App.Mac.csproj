@@ -6,7 +6,6 @@
     <RootNamespace>NAPS2</RootNamespace>
     <AssemblyName>NAPS2</AssemblyName>
     <ApplicationIcon>../NAPS2.Lib/Icons/favicon.ico</ApplicationIcon>
-    <LinkMode>None</LinkMode>
 
     <RuntimeIdentifiers>osx-x64;osx-arm64</RuntimeIdentifiers>
 
