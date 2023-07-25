@@ -25,7 +25,7 @@ jobs:
       run: dotnet build NAPS2.Setup
     
     - name: Publish Windows
-      run: dotnet run --project NAPS2.Tools -- publish -v
+      run: dotnet run --project NAPS2.Tools -- publish exe -v
       
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
