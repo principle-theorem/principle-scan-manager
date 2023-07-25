@@ -37,6 +37,9 @@ jobs:
       run: dotnet run --project NAPS2.Tools -- build release
 
     # Add platform-specific prerequisites installation here, like Inno Setup, WiX, Xcode, flatpak-builder, etc.
+    
+    - name: List dir contents
+    run: ls -la "NAPS2.Setup\obj
 
     - name: Package for MacOS
       if: matrix.os == 'macos-13'
