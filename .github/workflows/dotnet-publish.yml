@@ -30,17 +30,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
       
-    - name: Clean
-      run: dotnet run --project NAPS2.Tools -- clean
-      
     - name: Build
-      run: dotnet run --project NAPS2.Tools -- build release
+      run: dotnet run --project NAPS2.Tools -- build release -v
 
     # Add platform-specific prerequisites installation here, like Inno Setup, WiX, Xcode, flatpak-builder, etc.
     
     - name: List dir contents (Windows)
       if: matrix.os == 'windows-2022'
-      run: Get-ChildItem -Path "NAPS2.Setup\obj"
+      run: Get-ChildItem -Path "NAPS2.Setup"
       shell: pwsh
 
     - name: Package for MacOS
