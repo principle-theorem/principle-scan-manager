@@ -20,6 +20,9 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore
+      
+    - name: Build Setup
+      run: dotnet build NAPS2.Setup
     
     - name: Publish Windows
       run: dotnet run --project NAPS2.Tools -- publish -v
